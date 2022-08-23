@@ -1,5 +1,5 @@
 let NeDB = require("nedb");
-let db = new NeDB({
+let db   = new NeDB({
   filename: "users.db",
   autoload: true,
 });
@@ -17,6 +17,7 @@ module.exports = (app) => {
       if (err) {
         //function da pasta utils, metodo send()
         app.utils.error.send(err, req, res);
+
       } else {
         res.statusCode = 200;
         res.setHeader("Content-Type", "application/json");

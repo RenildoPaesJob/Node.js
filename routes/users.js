@@ -30,17 +30,8 @@ module.exports = (app) => {
   });
 
   route.post((req, res) => {
-    /**VALIDAÇÕES*/
-    req.assert('name', 'O nome é obrigatório!').notEmpty();
-    req.assert('email', 'O email está invalido!').notEmpty().isEmail();
 
-    let errors = req.validationErrors();
-    
-    if (errors) {
-      //function da pasta utils, metodo send()
-      app.utils.error.send(errors, req, res);
-      return false;
-    }
+    // if (!app.utils.validator.user(app, req, res)) return false;
 
     //usando NEDB para armazenar os dados do users
     db.insert(req.body, (err, user) => {
@@ -67,6 +58,9 @@ module.exports = (app) => {
 
   //editar um registro
   routeId.put((req, res) => {
+
+    // if (!app.utils.validator.user(app, req, res)) return false;
+
     db.update({_id: req.params.id}, req.body, err => {
       if (err) {
         app.utils.error.send(err, req, res);

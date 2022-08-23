@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //transformar os dados em json
 app.use(bodyParser.json());
 
-app.use(expressValidator());
+// app.use(expressValidator());
 
 //.include() => vai incluir todos os arquivos da pasta 'routes'
 //.into() => dentro do 'APP'

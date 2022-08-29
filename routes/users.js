@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 
     assert.ifError(err);
     
-    res.end(obj);
+    res.json(obj);
   })
 });
 
@@ -24,7 +24,7 @@ router.get('/:id', function(req, res, next) {
 
     assert.ifError(err);
     
-    res.end(obj);
+    res.json(obj);
   });
 });
 
@@ -34,7 +34,7 @@ router.put('/:id', function(req, res, next) {
 
     assert.ifError(err);
     
-    res.end(obj);
+    res.json(obj);
   });
 });
 
@@ -45,7 +45,7 @@ router.delete('/:id', function(req, res, next) {
 
     assert.ifError(err);
     
-    res.end(obj);
+    res.json(obj);
   });
 });
 
@@ -55,7 +55,7 @@ router.post('/', function(req, res, next) {
 
     assert.ifError(err);
     
-    res.end(obj);
+    res.json(obj);
   });
 });
 

@@ -2,8 +2,8 @@ module.exports = {
 
   user:(app, req, res) => {
     /**VALIDAÇÕES*/
-    req.assert('name', 'O nome é obrigatório!').notEmpty();
-    req.assert('email', 'O email está invalido!').notEmpty().isEmail();
+    req.assert('_name', 'O nome é obrigatório!').notEmpty();
+    req.assert('_email', 'O email está invalido!').notEmpty().isEmail();
 
     let errors = req.validationErrors();
     
